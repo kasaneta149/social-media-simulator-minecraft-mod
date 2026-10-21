@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RDB",
+    "E E",
+    "BIE"
+  ],
+  "key": {
+    "R": { "item": "minecraft:redstone" },
+    "D": { "item": "minecraft:diamond" },
+    "B": { "item": "minecraft:iron_block" },
+    "E": { "item": "minecraft:redstone_block" },
+    "I": { "item": "minecraft:iron_ingot" }
+  },
+  "result": {
+    "id": "fakesocialsimulator:subscription_manager",
+    "count": 1
+  }
+}

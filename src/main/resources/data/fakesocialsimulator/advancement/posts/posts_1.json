@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "fakesocialsimulator:post_block"
+    },
+    "title": "Premiere Publication",
+    "description": "Tu as publie ton tout premier contenu.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "fakesocialsimulator:followers/follower_1"
+}

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "mode_delete=false": { "model": "fakesocialsimulator:block/post_manager_add" },
+    "mode_delete=true": { "model": "fakesocialsimulator:block/post_manager_delete" }
+  }
+}

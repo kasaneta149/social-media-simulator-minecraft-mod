@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "fakesocialsimulator:profile_block"
+    },
+    "title": "Premier Abonne !",
+    "description": "Quelqu'un s'est egare sur ton profil. C'est le debut de la gloire !",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

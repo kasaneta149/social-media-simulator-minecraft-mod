@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "mode_delete=false": { "model": "fakesocialsimulator:block/subscription_manager_add" },
+    "mode_delete=true": { "model": "fakesocialsimulator:block/subscription_manager_delete" }
+  }
+}

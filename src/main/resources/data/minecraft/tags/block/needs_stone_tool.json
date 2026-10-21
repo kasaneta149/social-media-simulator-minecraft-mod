@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "fakesocialsimulator:subscription_manager",
+    "fakesocialsimulator:post_manager",
+    "fakesocialsimulator:profile_block"
+  ]
+}
