@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.nbt.CompoundTag;
 
+import java.util.Locale;
 import java.util.SplittableRandom;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -74,6 +75,8 @@ public class PlayerStats {
     private double exodusPool;
     private double exodusTau;
     private long lastExodusTime;
+    private String name;
+    private String nameLower;
 
     private long lastAchievementTime;
     private double momentBoost = 1.0;
@@ -95,6 +98,7 @@ public class PlayerStats {
     private long lastProcessTime;
 
     private long drainedViews;
+    private long lastQueryTime;
 
     private long syncedPosts = -1L;
     private long syncedFollowers = -1L;
@@ -161,6 +165,7 @@ public class PlayerStats {
         tag.putDouble("exodus_pool", this.exodusPool);
         tag.putDouble("exodus_tau", this.exodusTau);
         tag.putLong("last_exodus", this.lastExodusTime);
+        if (this.name != null) tag.putString("name", this.name);
         return tag;
     }
 
@@ -191,6 +196,7 @@ public class PlayerStats {
         stats.exodusPool = Math.max(0.0, tag.getDouble("exodus_pool"));
         stats.exodusTau = tag.getDouble("exodus_tau");
         stats.lastExodusTime = tag.getLong("last_exodus");
+        if (tag.contains("name")) stats.setName(tag.getString("name"));
 
         stats.postSpamLevel = Math.min(stats.postSpamLevel, 6.0);
         return stats;
@@ -259,6 +265,21 @@ public class PlayerStats {
         this.syncedPosts = -1L;
         this.syncedFollowers = -1L;
         this.syncedFollowing = -1L;
+    }
+
+    public String getName() { return name; }
+    public String getNameLower() { return nameLower; }
+
+    public void setName(String newName) {
+        if (newName == null || newName.equals(this.name)) return;
+        this.name = newName;
+        this.nameLower = newName.toLowerCase(Locale.ROOT);
+    }
+
+    public boolean allowQuery(long now) {
+        if (now - this.lastQueryTime < 200L) return false;
+        this.lastQueryTime = now;
+        return true;
     }
 
     public long getLastProcessTime() { return lastProcessTime; }

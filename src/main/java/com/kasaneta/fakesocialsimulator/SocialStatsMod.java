@@ -32,7 +32,9 @@ public class SocialStatsMod {
         ModBlocks.BLOCKS.register(modEventBus);
         ModBlocks.ITEMS.register(modEventBus);
         ModBlocks.BLOCK_ENTITIES.register(modEventBus);
+
         modEventBus.addListener(SocialStatsMod::addCreativeTabContents);
+
         modContainer.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
     }
 
@@ -41,6 +43,8 @@ public class SocialStatsMod {
             event.accept(ModBlocks.SUBSCRIPTION_BLOCK_ITEM.get());
             event.accept(ModBlocks.POST_BLOCK_ITEM.get());
             event.accept(ModBlocks.PROFILE_BLOCK_ITEM.get());
+            event.accept(ModBlocks.PROFILE_VIEWER_BLOCK_ITEM.get());
+            event.accept(ModBlocks.LEADERBOARD_BLOCK_ITEM.get());
         }
     }
 }

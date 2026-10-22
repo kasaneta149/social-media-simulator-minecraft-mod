@@ -23,6 +23,10 @@ public class FollowerEngine {
             ServerPlayer player = server.getPlayerList().getPlayer(uuid);
             boolean isOnline = (player != null);
 
+            if (isOnline && stats.getName() == null) {
+                stats.setName(player.getName().getString());
+            }
+
             if (SocialAlgorithm.runCycle(stats, isOnline, now)) {
                 needsSave = true;
             }

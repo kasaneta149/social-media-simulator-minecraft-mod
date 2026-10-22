@@ -36,6 +36,20 @@ public class ModBlocks {
     public static final Supplier<Item> PROFILE_BLOCK_ITEM = ITEMS.register("profile_block",
             () -> new BlockItem(PROFILE_BLOCK.get(), new Item.Properties()));
 
+    private static final BlockBehaviour.Properties UTILITY_PROPS = BlockBehaviour.Properties.of()
+            .sound(SoundType.METAL)
+            .strength(2.0f, 5.0f);
+
+    public static final Supplier<Block> PROFILE_VIEWER_BLOCK = BLOCKS.register("profile_viewer",
+            () -> new ProfileViewerBlock(UTILITY_PROPS));
+    public static final Supplier<Item> PROFILE_VIEWER_BLOCK_ITEM = ITEMS.register("profile_viewer",
+            () -> new BlockItem(PROFILE_VIEWER_BLOCK.get(), new Item.Properties()));
+
+    public static final Supplier<Block> LEADERBOARD_BLOCK = BLOCKS.register("leaderboard",
+            () -> new LeaderboardBlock(UTILITY_PROPS));
+    public static final Supplier<Item> LEADERBOARD_BLOCK_ITEM = ITEMS.register("leaderboard",
+            () -> new BlockItem(LEADERBOARD_BLOCK.get(), new Item.Properties()));
+
     public static final Supplier<BlockEntityType<SocialBlockEntity>> SOCIAL_BLOCK_ENTITY = BLOCK_ENTITIES.register("social_block_entity",
             () -> BlockEntityType.Builder.of(SocialBlockEntity::new, SUBSCRIPTION_BLOCK.get(), POST_BLOCK.get()).build(null));
 }

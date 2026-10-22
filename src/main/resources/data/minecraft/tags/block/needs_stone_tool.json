@@ -3,6 +3,9 @@
   "values": [
     "fakesocialsimulator:subscription_manager",
     "fakesocialsimulator:post_manager",
-    "fakesocialsimulator:profile_block"
+    "fakesocialsimulator:profile_block",
+    "fakesocialsimulator:leaderboard",
+    "fakesocialsimulator:profile_viewer"
+    
   ]
 }
